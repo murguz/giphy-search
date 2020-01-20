@@ -1,0 +1,6 @@
+<a mat-list-item class="sidenav-item"
+   [routerLink]="[navigationItem.path]" disableRipple>
+    <div class="item-selector"></div>
+    <mat-icon>{{navigationItem.icon}}</mat-icon>
+    <div class="item-title" fxFlex="100%"> {{navigationItem.data?.title}} </div>
+</a>

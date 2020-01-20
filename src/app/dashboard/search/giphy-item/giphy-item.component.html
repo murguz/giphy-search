@@ -1,0 +1,15 @@
+<mat-card class="giphy-card">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{giphyItem.title}}</mat-card-title>
+    <mat-card-subtitle>{{giphyItem.id}}</mat-card-subtitle>
+  </mat-card-header>
+  <div (mouseover)="setPlaying(true)" (mouseout)="setPlaying(false)">
+    <img *ngIf="!isPlaying" class="img-static" mat-card-image src="{{getImageUrl()}}" alt="{{giphyItem.title}}">
+    <img *ngIf="isPlaying"  class="img-gif"    mat-card-image src="{{getGifUrl()}}"   alt="{{giphyItem.title}}">
+  </div>
+  <mat-card-actions>
+    <a href="{{giphyItem.url}}" target="_blank" mat-button>VIEW</a>
+    <a href="{{giphyItem.embed_url}}" target="_blank" mat-button>SHARE</a>
+  </mat-card-actions>
+</mat-card>

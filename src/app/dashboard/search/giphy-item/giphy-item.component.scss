@@ -1,0 +1,14 @@
+.giphy-card {
+  width: 225px;
+  margin-bottom: 10px;
+
+  .mat-card-header {
+    padding-bottom: 10px;
+
+    .header-image {
+      background-image: url('./../../../../assets/logo.png');
+      background-size: cover;
+      border-radius: 0;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.search-container {
+  padding: 20px;
+
+  .search-header {
+    display: flex;
+    gap: 10px;
+
+    .full-width {
+      width: 100%;
+    }
+
+    button {
+      height: 50%;
+      align-self: center;
+    }
+  }
+
+  .search-results {
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+}

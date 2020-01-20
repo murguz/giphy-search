@@ -1,0 +1,26 @@
+<div class="search-container">
+  <div class="search-header">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Phrase" [(ngModel)]="giphyPageRequest.q" (keyup.enter)="onSearch()">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+  </div>
+  <mat-toolbar *ngIf="showNoResults()" class="no-results">No results have been found</mat-toolbar>
+  <mat-paginator *ngIf="showPaginator()"
+    [length]="searchResponse.pagination.total_count"
+    [pageSize]="giphyPageRequest.limit"
+    [pageSizeOptions]="[giphyPageRequest.limit]"
+    [pageIndex]="getPageIndex()"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+  <div class="search-results">
+    <app-giphy-item *ngFor="let giphyItem of searchResults" [giphyItem]="giphyItem"></app-giphy-item>
+  </div>
+  <mat-paginator *ngIf="showPaginator()"
+    [length]="searchResponse.pagination.total_count"
+    [pageSize]="giphyPageRequest.limit"
+    [pageSizeOptions]="[giphyPageRequest.limit]"
+    [pageIndex]="getPageIndex()"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
